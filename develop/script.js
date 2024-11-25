@@ -6,10 +6,10 @@ const employeesArray = [];
 // Collect employee data
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
-  while (true) {
+  while (true) { //continues prompting until the user decides to stop
 
     const firstName = prompt("Enter employee's first name:");
-    if (firstName === null) return;
+    if (firstName === null) return; // user clicked "cancel"
 
     const lastName = prompt("Enter employee's last name:")
     if (lastName === null) return;
@@ -17,7 +17,7 @@ const collectEmployees = function () {
     const salary = parseFloat(prompt("Enter employee's salary:"));
     if (isNaN(salary)) {
       alert("Invalid input for salary. Please enter a valid number.");
-      continue;
+      continue; // skips to the next iteration
     }
 
     if (firstName && lastName && !isNaN(salary)) {
@@ -28,10 +28,11 @@ const collectEmployees = function () {
       alert("Invalid input. Please enter valid data.");
     }
 
+    // ask if user wants to add another employee
     const addMore = confirm("Do you want to add another employee?");
     if (!addMore)
 
-    return employeesArray;
+    return employeesArray; // exits prompts and returns the inputed employees into the table displayed on html
   }
 };
 
@@ -45,7 +46,7 @@ const displayAverageSalary = function (employeesArray) {
   const totalSalary = employeesArray.reduce((acc, employee) => acc + employee.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
 
-  console.log(`The average salary between our ${employeesArray.length} employee(s) is: $${averageSalary.toFixed(2)}`);
+  console.log(`The average salary between our ${employeesArray.length} employee(s) is: $${averageSalary.toFixed(2)}`); // logs in console the average salary of entered employees
 }
 
 // Select a random employee
@@ -58,7 +59,7 @@ const getRandomEmployee = function (employeesArray) {
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
 
-  console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+  console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`); // logs in console a randomly chosen entered employee with their first and last name
 }
 
 /*
