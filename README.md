@@ -124,5 +124,7 @@ You are required to submit the following for review:
 
 
 
+* Visit this deployed site at: https://croseb99.github.io/employee-payroll-challenge/
+
 - - -
 © 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
